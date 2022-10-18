@@ -149,26 +149,42 @@ public class App {
     System.out.println("Devinez au nombre auquel je pense compris entre 0 et 100 : ");
     Random generateur = new Random();
     int nombreAleatoire = generateur.nextInt(100) + 1;
+    boolean gagne=false;
+    int tentative =0 ;
 
     Scanner clavier = new Scanner(System.in);
+    
+    
+    while (gagne=true) {;
     int nombreChoisi = clavier.nextInt();
-    clavier.close();
+    
     System.out.println("Vous proposez : " + nombreChoisi);
+    tentative=(tentative+1);
 
     if (nombreAleatoire == nombreChoisi) {
-      System.out
-          .println("Vous avez réussi à trouver le nombre auquel je pensais :" + nombreAleatoire + "! Félicitations !");
+      System.out.println("Vous avez trouvé " + nombreAleatoire + " ! Félicitations !");
+      gagne=true;
+      System.out.println("Il vous a fallu "+tentative+" tentative(s)");
     } else {
+      System.out.println("Essayez encore un nombre: ");
+
+
       if (nombreAleatoire > nombreChoisi) {
-        int differencePlusGrand = (nombreAleatoire - nombreChoisi);
-        System.out.println("Le nombre auquel je pensais était : " + nombreAleatoire);
-        System.out.println("Vous étiez à " + differencePlusGrand + " de trouver la bonne réponse ");
+        //int differencePlusGrand = (nombreAleatoire - nombreChoisi);
+        //System.out.println("Le nombre auquel je pensais était : " + nombreAleatoire);
+        //System.out.println("Vous étiez à " + differencePlusGrand + " de trouver la bonne réponse ");
+        System.out.println("Trop petit");
+         
+
       } else {
-        System.out.println("Le nombre auquel je pensais était : " + nombreAleatoire);
-      System.out.println("Vous étiez à " + (nombreChoisi - nombreAleatoire) + " de trouver la bonne réponse");}
+        //System.out.println("Le nombre auquel je pensais était : " + nombreAleatoire);
+      //System.out.println("Vous étiez à " + (nombreChoisi - nombreAleatoire) + " de trouver la bonne réponse");}
+      System.out.println("Trop grand");
+      
 
     }
   }
-
 }
+  clavier.close();
 
+  } }
