@@ -148,15 +148,26 @@ public class App {
 
     System.out.println("Devinez au nombre auquel je pense compris entre 0 et 100 : ");
     Random generateur = new Random();
-    int nombreAleatoire = generateur.nextInt(100) + 1;
+    int fourchette= 100;
+    int nombreAleatoire = generateur.nextInt(fourchette) + 1;
     boolean gagne=false;
     int tentative =0 ;
 
     Scanner clavier = new Scanner(System.in);
-    
-    
-    while (gagne=true) {;
-    int nombreChoisi = clavier.nextInt();
+    int nombreChoisi= 0;
+     
+     while (gagne=true) {
+    System.out.println("Entrez un nombre: ");
+     nombreChoisi = clavier.nextInt();
+      
+     while(!(nombreChoisi<fourchette) || !(nombreChoisi>0) ){
+      
+      
+      System.out.println("merci d'entrer un nombre compris entre 0 et "+fourchette+". ");
+      System.out.println("Entrez un nombre: ");
+
+
+     nombreChoisi = clavier.nextInt();}
     
     System.out.println("Vous proposez : " + nombreChoisi);
     tentative=(tentative+1);
@@ -166,25 +177,22 @@ public class App {
       gagne=true;
       System.out.println("Il vous a fallu "+tentative+" tentative(s)");
     } else {
-      System.out.println("Essayez encore un nombre: ");
-
-
+      
       if (nombreAleatoire > nombreChoisi) {
         //int differencePlusGrand = (nombreAleatoire - nombreChoisi);
         //System.out.println("Le nombre auquel je pensais était : " + nombreAleatoire);
         //System.out.println("Vous étiez à " + differencePlusGrand + " de trouver la bonne réponse ");
         System.out.println("Trop petit");
          
-
-      } else {
+ } 
+      else {
         //System.out.println("Le nombre auquel je pensais était : " + nombreAleatoire);
       //System.out.println("Vous étiez à " + (nombreChoisi - nombreAleatoire) + " de trouver la bonne réponse");}
       System.out.println("Trop grand");
-      
-
-    }
-  }
+      }
+  }}
 }
-  clavier.close();
+}
 
-  } }
+   
+
