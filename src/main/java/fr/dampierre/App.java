@@ -156,14 +156,14 @@ public class App {
     Scanner clavier = new Scanner(System.in);
     int nombreChoisi= 0;
      
-     while (gagne=true) {
+     while (gagne==false) {
     System.out.println("Entrez un nombre: ");
      nombreChoisi = clavier.nextInt();
       
      while(!(nombreChoisi<fourchette) || !(nombreChoisi>0) ){
       
       
-      System.out.println("merci d'entrer un nombre compris entre 0 et "+fourchette+". ");
+      System.out.println("Merci d'entrer un nombre compris entre 0 et "+fourchette+". ");
       System.out.println("Entrez un nombre: ");
 
 
