@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class App {
 
-  // public static void main(String[] args) {
   // System.out.println( "Bonjour") ;
 
   // Récupérer le nombre de d'heures travaillés
@@ -92,6 +91,8 @@ public class App {
   // après avoir pris votre café !") ;
   // }
 
+  // public static void main(String[] args) {
+
   // Scanner clavier = new Scanner(System.in);
   // System.out.print("Entrez une lettre: ");
   // String entrée = clavier.nextLine();
@@ -123,29 +124,51 @@ public class App {
   // System.out.println("Salaire: " + salaire);
   // clavier.close();
 
+  // Random generateur = new Random();
+  // int total = 0;
+  // while (total != 20) {
+  // for (int i = 0; i < 5; i++) {
+
+  // int lancer = generateur.nextInt(6) + 1;
+  // System.out.println("résultat du dé " + (i + 1) + " : " + lancer);
+  // total = total + lancer;
+  // System.out.println("Le pion est sur la case " + total + " !");
+  // }
+
+  // if (total > 20 || total < 20) {
+  // System.out.println("Vous avez perdu");
+  // total = 0 ;
+  // } else {
+  // System.out.println("Vous avez gagné");
+
+  // }
+  // }
+
   public static void main(String[] args) {
 
+    System.out.println("Devinez au nombre auquel je pense compris entre 0 et 100 : ");
     Random generateur = new Random();
-    int total = 0;
-    while (total != 20) {
-      for (int i = 0; i < 5; i++) {
-        
-        int lancer = generateur.nextInt(6) + 1;
-        System.out.println("résultat du dé " + (i + 1) + " : " + lancer);
-        total = total + lancer;
-        System.out.println("Le pion est sur la case " + total + " !");
-      }
-      
-      if (total > 20 || total < 20) {
-        System.out.println("Vous avez perdu");
-        total = 0 ;
-      } else {
-        System.out.println("Vous avez gagné");
-        
-      }
-    }
-    // De: Bastien MONIER 11/10/2022 BTS SIO1
+    int nombreAleatoire = generateur.nextInt(100) + 1;
 
+    Scanner clavier = new Scanner(System.in);
+    int nombreChoisi = clavier.nextInt();
+    clavier.close();
+    System.out.println("Vous proposez : " + nombreChoisi);
+
+    if (nombreAleatoire == nombreChoisi) {
+      System.out
+          .println("Vous avez réussi à trouver le nombre auquel je pensais :" + nombreAleatoire + "! Félicitations !");
+    } else {
+      if (nombreAleatoire > nombreChoisi) {
+        int differencePlusGrand = (nombreAleatoire - nombreChoisi);
+        System.out.println("Le nombre auquel je pensais était : " + nombreAleatoire);
+        System.out.println("Vous étiez à " + differencePlusGrand + " de trouver la bonne réponse ");
+      } else {
+        System.out.println("Le nombre auquel je pensais était : " + nombreAleatoire);
+      System.out.println("Vous étiez à " + (nombreChoisi - nombreAleatoire) + " de trouver la bonne réponse");}
+
+    }
   }
 
 }
+
